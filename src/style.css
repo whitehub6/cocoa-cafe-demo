@@ -123,9 +123,9 @@ body {
 .cart-trigger-btn {
   font-family: var(--font-sans);
   background: none;
-  border: 1px solid var(--color-border);
+  border: none;
   color: var(--color-text-primary);
-  padding: 0.5rem 0.85rem;
+  padding: 0.5rem 0;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -133,14 +133,12 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  border-radius: 2px;
+  gap: 0.4rem;
   transition: var(--transition-smooth);
 }
 
 .cart-trigger-btn:hover {
-  background-color: var(--color-text-primary);
-  color: var(--color-bg);
+  color: var(--color-accent);
 }
 
 .cart-badge {

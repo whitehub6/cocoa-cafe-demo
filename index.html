@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link class="favicon" rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>COCOÁ | Dessert Cafe & Pâtisserie, Virar</title>
     <!-- Google Fonts -->
@@ -23,7 +23,11 @@
             <li><a href="#featured">Signatures</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#beverages">Beverages</a></li>
-            <li><a href="#contact">Hours & Contact</a></li>
+            <li>
+              <button class="cart-trigger-btn" id="cartTrigger" aria-label="Open Cart">
+                Cart <span class="cart-badge" id="cartBadge">0</span>
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -56,7 +60,7 @@
       </div>
     </section>
 
-    <!-- Signature Creations Grid (New attractive section replacing the old seating column) -->
+    <!-- Signature Creations Grid -->
     <section id="featured" class="cocoa-section cocoa-section__featured">
       <div class="cocoa-section__inner">
         <h5 class="section-heading-serif reveal">Signatures</h5>
@@ -70,7 +74,10 @@
             <div class="featured-card__content">
               <h3>The Matilda Cake</h3>
               <p>Our ultra-decadent chocolate pull-up cake layered in a glass jar. A chocolate lover's dream.</p>
-              <span class="featured-price">₹280</span>
+              <div class="featured-footer">
+                <span class="featured-price">₹280</span>
+                <button class="btn-add-to-cart" data-id="sig-matilda" data-name="The Matilda Cake" data-price="280">+ Add</button>
+              </div>
             </div>
           </div>
 
@@ -82,7 +89,10 @@
             <div class="featured-card__content">
               <h3>Lotus Biscoff Cheesecake</h3>
               <p>Creamy, smooth baked cheesecake loaded with original Biscoff spread and crushed cookies.</p>
-              <span class="featured-price">₹260</span>
+              <div class="featured-footer">
+                <span class="featured-price">₹260</span>
+                <button class="btn-add-to-cart" data-id="sig-biscoff" data-name="Lotus Biscoff Cheesecake" data-price="260">+ Add</button>
+              </div>
             </div>
           </div>
 
@@ -94,7 +104,10 @@
             <div class="featured-card__content">
               <h3>Chocolate Flake Cake</h3>
               <p>Moist chocolate sponge layered with ganache, topped with delicate chocolate flakes and fresh whipped cream.</p>
-              <span class="featured-price">₹240</span>
+              <div class="featured-footer">
+                <span class="featured-price">₹240</span>
+                <button class="btn-add-to-cart" data-id="sig-flake" data-name="Chocolate Flake Cake" data-price="240">+ Add</button>
+              </div>
             </div>
           </div>
         </div>
@@ -118,30 +131,42 @@
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Black Forest Cake</span>
-                  <span class="menu-item-price">₹350 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹350</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-blackforest" data-name="Black Forest Cake" data-price="350">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">Layers of rich chocolate sponge, fresh whipped cream, and sour dark cherries.</p>
+                <p class="menu-item-desc">Layers of rich chocolate sponge, fresh whipped cream, and sour dark cherries. <span class="weight-note">(half kg)</span></p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Pineapple Delight</span>
-                  <span class="menu-item-price">₹350 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹350</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-pineapple" data-name="Pineapple Delight" data-price="350">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">Moist vanilla sponge layered with crushed juicy pineapples and whipped cream.</p>
+                <p class="menu-item-desc">Moist vanilla sponge layered with crushed juicy pineapples and whipped cream. <span class="weight-note">(half kg)</span></p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Blueberry Cake</span>
-                  <span class="menu-item-price">₹400 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹400</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-blueberry" data-name="Blueberry Cake" data-price="400">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">Sweet and tangy blueberry compote layered between light vanilla sponge layers.</p>
+                <p class="menu-item-desc">Sweet and tangy blueberry compote layered between light vanilla sponge layers. <span class="weight-note">(half kg)</span></p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Fresh Mango (Seasonal)</span>
-                  <span class="menu-item-price">₹650 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹650</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-mango" data-name="Fresh Mango (Seasonal)" data-price="650">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">Freshly sliced premium mangoes layered with rich custard cream and vanilla cake.</p>
+                <p class="menu-item-desc">Freshly sliced premium mangoes layered with rich custard cream and vanilla cake. <span class="weight-note">(half kg)</span></p>
               </li>
             </ul>
 
@@ -150,30 +175,42 @@
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Red Velvet Cheese Cream</span>
-                  <span class="menu-item-price">₹700 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹700</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-redvelvetcheescream" data-name="Red Velvet Cheese Cream" data-price="700">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">Crimson velvet sponge layered with a decadent, smooth cream cheese frosting.</p>
+                <p class="menu-item-desc">Crimson velvet sponge layered with a decadent, smooth cream cheese frosting. <span class="weight-note">(half kg)</span></p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Chocolate Cheese Cream</span>
-                  <span class="menu-item-price">₹800 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹800</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-chococheescream" data-name="Chocolate Cheese Cream" data-price="800">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">A rich chocolate-infused baked cheesecake topped with thick chocolate glaze.</p>
+                <p class="menu-item-desc">A rich chocolate-infused baked cheesecake topped with thick chocolate glaze. <span class="weight-note">(half kg)</span></p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Ferrero Rocher Cake</span>
-                  <span class="menu-item-price">₹650 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹650</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-ferrerorocher" data-name="Ferrero Rocher Cake" data-price="650">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">Hazelnut chocolate sponge layered with Nutella buttercream and crushed Ferrero Rocher.</p>
+                <p class="menu-item-desc">Hazelnut chocolate sponge layered with Nutella buttercream and crushed Ferrero Rocher. <span class="weight-note">(half kg)</span></p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Premium Nutella Cake</span>
-                  <span class="menu-item-price">₹700 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹700</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-nutella" data-name="Premium Nutella Cake" data-price="700">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">Dense chocolate cake completely loaded with rich, smooth hazelnut Nutella spread.</p>
+                <p class="menu-item-desc">Dense chocolate cake completely loaded with rich, smooth hazelnut Nutella spread. <span class="weight-note">(half kg)</span></p>
               </li>
             </ul>
           </div>
@@ -189,16 +226,22 @@
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Chocolate Mud Cake</span>
-                  <span class="menu-item-price">₹400 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹400</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-mud" data-name="Chocolate Mud Cake" data-price="400">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">Rich, dense, and heavily fudgy chocolate cake layered with dark chocolate ganache.</p>
+                <p class="menu-item-desc">Rich, dense, and heavily fudgy chocolate cake layered with dark chocolate ganache. <span class="weight-note">(half kg)</span></p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Dutch Truffle Cake</span>
-                  <span class="menu-item-price">₹450 <span class="weight-note">/ half kg</span></span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹450</span>
+                    <button class="btn-add-to-cart-small" data-id="cake-dutch" data-name="Dutch Truffle Cake" data-price="450">+</button>
+                  </span>
                 </div>
-                <p class="menu-item-desc">A classic favorite. Meticulously rich chocolate ganache coating a moist chocolate sponge.</p>
+                <p class="menu-item-desc">A classic favorite. Meticulously rich chocolate ganache coating a moist chocolate sponge. <span class="weight-note">(half kg)</span></p>
               </li>
             </ul>
           </div>
@@ -231,14 +274,20 @@
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Classic Hot Chocolate</span>
-                  <span class="menu-item-price">₹160</span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹160</span>
+                    <button class="btn-add-to-cart-small" data-id="bev-classic-hot" data-name="Classic Hot Chocolate" data-price="160">+</button>
+                  </span>
                 </div>
                 <p class="menu-item-desc">Thick, rich, and creamy chocolate. The ultimate comfort cup.</p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Dark Campfire Cocoa</span>
-                  <span class="menu-item-price">₹180</span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹180</span>
+                    <button class="btn-add-to-cart-small" data-id="bev-campfire-cocoa" data-name="Dark Campfire Cocoa" data-price="180">+</button>
+                  </span>
                 </div>
                 <p class="menu-item-desc">Our classic hot chocolate topped with toasted marshmallows.</p>
               </li>
@@ -254,14 +303,20 @@
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Espresso Tonic</span>
-                  <span class="menu-item-price">₹150</span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹150</span>
+                    <button class="btn-add-to-cart-small" data-id="bev-espresso-tonic" data-name="Espresso Tonic" data-price="150">+</button>
+                  </span>
                 </div>
                 <p class="menu-item-desc">A double shot of espresso poured over chilled tonic water and ice.</p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Iced Caramel Latte</span>
-                  <span class="menu-item-price">₹170</span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹170</span>
+                    <button class="btn-add-to-cart-small" data-id="bev-iced-caramel" data-name="Iced Caramel Latte" data-price="170">+</button>
+                  </span>
                 </div>
                 <p class="menu-item-desc">Espresso, cold milk, and rich caramel sauce, served over ice.</p>
               </li>
@@ -279,14 +334,20 @@
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">The Double Cocoa Shake</span>
-                  <span class="menu-item-price">₹220</span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹220</span>
+                    <button class="btn-add-to-cart-small" data-id="bev-double-cocoa" data-name="The Double Cocoa Shake" data-price="220">+</button>
+                  </span>
                 </div>
                 <p class="menu-item-desc">Rich chocolate gelato blended with dark fudge and whole milk.</p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Lotus Biscoff Shake</span>
-                  <span class="menu-item-price">₹240</span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹240</span>
+                    <button class="btn-add-to-cart-small" data-id="bev-biscoff-shake" data-name="Lotus Biscoff Shake" data-price="240">+</button>
+                  </span>
                 </div>
                 <p class="menu-item-desc">Vanilla gelato blended with Lotus Biscoff spread and crushed cookies.</p>
               </li>
@@ -302,14 +363,20 @@
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Chocolate Cream Soda</span>
-                  <span class="menu-item-price">₹160</span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹160</span>
+                    <button class="btn-add-to-cart-small" data-id="bev-cream-soda" data-name="Chocolate Cream Soda" data-price="160">+</button>
+                  </span>
                 </div>
                 <p class="menu-item-desc">Old-school diner classic: chocolate syrup, soda water, and a splash of cream.</p>
               </li>
               <li>
                 <div class="menu-item-header">
                   <span class="menu-item-name">Berry Hibiscus Cooler</span>
-                  <span class="menu-item-price">₹150</span>
+                  <span class="menu-item-price-wrapper">
+                    <span class="menu-item-price">₹150</span>
+                    <button class="btn-add-to-cart-small" data-id="bev-berry-hibiscus" data-name="Berry Hibiscus Cooler" data-price="150">+</button>
+                  </span>
                 </div>
                 <p class="menu-item-desc">Chilled hibiscus tea brewed with mixed berries, topped with soda.</p>
               </li>
@@ -327,7 +394,13 @@
             <div class="savory-card">
               <img src="/savory_dishes.jpg" alt="Savory Dishes - Avocado Toast & Salad" class="savory-card-img">
               <div class="savory-card-content">
-                <p>We believe in balance. Alongside our sweet creations, we serve fresh, hearty diner classics like loaded Avocado Toast and custom garden salad bowls.</p>
+                <div class="savory-card-header">
+                  <p>We believe in balance. Alongside our sweet creations, we serve fresh, hearty diner classics like loaded Avocado Toast and custom garden salad bowls.</p>
+                  <div class="savory-buttons">
+                    <button class="btn-add-to-cart-small" data-id="sav-avocado" data-name="Avocado Toast" data-price="220" title="Add Avocado Toast (₹220)">+ Avocado Toast (₹220)</button>
+                    <button class="btn-add-to-cart-small" data-id="sav-salad" data-name="Garden Salad Bowl" data-price="250" title="Add Garden Salad (₹250)">+ Garden Salad (₹250)</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -361,6 +434,92 @@
         <p>&copy; 2026 COCOÁ. Inspired by Le Swan design framework.</p>
       </div>
     </footer>
+
+    <!-- Cart Drawer Sidebar -->
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+    <div class="cocoa-cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <h3>Votre Panier <span>/ Your Cart</span></h3>
+        <button class="btn-close-drawer" id="closeCart" aria-label="Close Cart">&times;</button>
+      </div>
+      
+      <div class="cart-drawer-body">
+        <ul class="cart-items-list" id="cartItemsList">
+          <!-- Injected dynamically by JS -->
+          <li class="empty-cart-message">Your cart is currently empty.</li>
+        </ul>
+      </div>
+      
+      <div class="cart-drawer-footer">
+        <div class="cart-total-row">
+          <span>Sous-total / Subtotal</span>
+          <span class="total-amount" id="cartTotalAmount">₹0</span>
+        </div>
+        <button class="btn-checkout" id="checkoutBtn" disabled>Passer à la caisse / Checkout</button>
+      </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-backdrop" id="checkoutModal">
+      <div class="checkout-modal-content">
+        <button class="btn-close-modal" id="closeCheckout" aria-label="Close Checkout">&times;</button>
+        
+        <div class="checkout-modal-body" id="checkoutModalBody">
+          <!-- Step 1: Form -->
+          <div class="checkout-form-step" id="checkoutFormStep">
+            <h3>Caisse <span>/ Checkout</span></h3>
+            <form id="orderForm">
+              <div class="form-group">
+                <label for="orderName">Full Name</label>
+                <input type="text" id="orderName" required placeholder="e.g. Priyesh Patel">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="orderPhone">Phone Number</label>
+                  <input type="tel" id="orderPhone" required placeholder="e.g. +91 98765 43210">
+                </div>
+                <div class="form-group">
+                  <label for="orderOption">Option</label>
+                  <select id="orderOption" required>
+                    <option value="delivery" selected>Home Delivery (Virar West)</option>
+                    <option value="pickup">Self-Pickup at Cafe</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group" id="deliveryAddressGroup">
+                <label for="orderAddress">Delivery Address</label>
+                <textarea id="orderAddress" rows="3" required placeholder="Your address in Virar West..."></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="orderNotes">Special Instructions / Message on Cake</label>
+                <textarea id="orderNotes" rows="2" placeholder="e.g. Write 'Happy Birthday Priyesh' on the cake..."></textarea>
+              </div>
+              
+              <div class="checkout-summary-box">
+                <h4>Order Summary</h4>
+                <div class="summary-total-row">
+                  <span>Grand Total</span>
+                  <span id="checkoutTotalAmount">₹0</span>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn-primary-diner btn-block">Confirmer la commande / Place Order</button>
+            </form>
+          </div>
+
+          <!-- Step 2: Receipt (shown after placing order) -->
+          <div class="checkout-receipt-step" id="checkoutReceiptStep" style="display: none;">
+            <!-- Receipt injected dynamically by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="cocoa-toast" id="cocoaToast">Item added to cart</div>
 
     <script type="module" src="/src/main.js"></script>
   </body>

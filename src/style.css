@@ -427,13 +427,28 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
   transition: var(--transition-smooth);
 }
 
+/* Alternate angles for polaroid layout */
+.featured-card:nth-child(1) {
+  transform: rotate(-1deg);
+}
+
+.featured-card:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.featured-card:nth-child(3) {
+  transform: rotate(-1.5deg);
+}
+
 .featured-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-12px) rotate(0deg) scale(1.02);
+  box-shadow: 0 15px 35px rgba(28, 22, 19, 0.12);
   border-color: var(--color-accent);
+  z-index: 5;
 }
 
 .featured-card__image-wrapper {
@@ -451,8 +466,19 @@ body {
   transition: var(--transition-smooth);
 }
 
+/* Image zoom & rotate on hover */
 .featured-card:hover .featured-img {
-  transform: scale(1.03);
+  transform: scale(1.08) rotate(1.5deg);
+}
+
+/* Image angle correction for Chocolate Flake Cake (3rd image) */
+.featured-card:nth-child(3) .featured-img {
+  transform: rotate(-3deg) scale(1.08); /* Counter-rotates and scales to hide edges */
+  transform-origin: center;
+}
+
+.featured-card:nth-child(3):hover .featured-img {
+  transform: scale(1.15) rotate(-1.5deg); /* Smoothly transitions to a adjusted hover rotation */
 }
 
 .featured-card__content {

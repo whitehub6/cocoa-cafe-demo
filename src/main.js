@@ -239,7 +239,7 @@ if (orderForm && checkoutFormStep && checkoutReceiptStep) {
     // Inject invoice template
     checkoutReceiptStep.innerHTML = `
       <div class="receipt-icon">✓</div>
-      <h3>Merci! <span>/ Thank You</span></h3>
+      <h3>Thank You</h3>
       <p class="lead">Your order proposal has been sent to our cafe in Virar. We will call you to confirm.</p>
       
       <div class="retro-invoice">

@@ -12,7 +12,7 @@
   --font-sans: 'Montserrat', sans-serif;
   
   /* Layout */
-  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-smooth: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Reset & Bases */
@@ -35,6 +35,21 @@ body {
   -webkit-font-smoothing: antialiased;
   padding: 0;
   margin: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-primary);
 }
 
 /* Global Navigation & Header */
@@ -98,6 +113,96 @@ body {
 
 .cocoa-nav__list a:hover {
   color: var(--color-accent);
+}
+
+/* Custom Hero Collage Section */
+.cocoa-hero-collage {
+  padding: 4rem 0 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cocoa-hero-collage__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.collage-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.collage-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Double-lined frame for the branding image */
+.frame-double {
+  border: 1px solid var(--color-border);
+  padding: 10px;
+  background-color: var(--color-bg);
+  position: relative;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(28, 22, 19, 0.05);
+}
+
+.frame-double::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid var(--color-border);
+  pointer-events: none;
+}
+
+/* Circular frame for the interior seating booth */
+.frame-circle {
+  border: 12px solid var(--color-border);
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 15px 40px rgba(28, 22, 19, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-border);
+}
+
+.collage-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.collage-img-circle {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+.frame-circle:hover .collage-img-circle {
+  transform: scale(1.05);
+}
+
+.caption-text {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 1px;
 }
 
 /* Common Section Layout */
@@ -215,51 +320,6 @@ body {
   color: var(--color-accent);
 }
 
-/* Beautiful Image Placeholder Styling (Matches Le Swan Retro Vibe) */
-.cocoa-placeholder-box {
-  background-color: rgba(28, 22, 19, 0.02);
-  border: 1px dashed var(--color-border);
-  padding: 4rem 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 300px;
-}
-
-.cocoa-placeholder-box .placeholder-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  filter: grayscale(1);
-  opacity: 0.7;
-}
-
-.cocoa-placeholder-box .placeholder-title {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  color: var(--color-text-primary);
-  margin-bottom: 0.5rem;
-}
-
-.cocoa-placeholder-box .placeholder-desc {
-  font-size: 0.85rem;
-  font-style: italic;
-  color: var(--color-text-secondary);
-  max-width: 400px;
-}
-
-/* Hero Box specifics */
-.hero-box {
-  min-height: 450px;
-  background-color: rgba(142, 90, 61, 0.03);
-  border-style: solid;
-  border-width: 1px;
-}
-
 /* Menu Layout */
 .cocoa-menu {
   margin-bottom: 3.5rem;
@@ -328,6 +388,14 @@ body {
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--color-accent);
+}
+
+.weight-note {
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: normal;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.5px;
 }
 
 .menu-item-desc {
@@ -407,8 +475,28 @@ body {
   align-items: center;
 }
 
-.cocoa-menu--two-column-odd .cocoa-placeholder-box {
-  min-height: 250px;
+/* Minimalist border box representing the menu meta information */
+.cocoa-menu-meta-box {
+  border: 1px solid var(--color-border);
+  padding: 2.5rem;
+  text-align: center;
+  background-color: rgba(28, 22, 19, 0.02);
+  box-shadow: 0 5px 15px rgba(28, 22, 19, 0.02);
+}
+
+.cocoa-menu-meta-box h4 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.cocoa-menu-meta-box p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
 /* Footer Section */
@@ -470,7 +558,7 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal.active {
@@ -480,6 +568,13 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 991px) {
+  .collage-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .collage-item--right .frame-circle {
+    max-width: 280px;
+  }
   .cocoa-section__intro .cocoa-section__inner {
     grid-template-columns: 1fr;
     gap: 3rem;

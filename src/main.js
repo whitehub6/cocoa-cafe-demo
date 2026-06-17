@@ -2,9 +2,9 @@ import './style.css';
 
 // Scroll reveal animations
 function reveal() {
-  const reveals = document.querySelectorAll('.cocoa-section, .cocoa-placeholder-box, .cocoa-menu, .cocoa-callout');
+  const reveals = document.querySelectorAll('.reveal');
   const windowHeight = window.innerHeight;
-  const elementVisible = 100;
+  const elementVisible = 80;
 
   reveals.forEach(element => {
     const elementTop = element.getBoundingClientRect().top;

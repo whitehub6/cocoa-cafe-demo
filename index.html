@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cocoa Dessert Cafe | Virar West</title>
-    <!-- Google Fonts for Le Swan Style Serif and Sans-serif -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,16 +28,40 @@
       </div>
     </header>
 
+    <!-- Custom Hero Collage Section (Inspired by Le Swan Grid/Frames) -->
+    <section class="cocoa-hero-collage">
+      <div class="cocoa-hero-collage__inner">
+        <!-- Asymmetrical split collage -->
+        <div class="collage-grid">
+          <!-- Left side: The stone wall branding sign -->
+          <div class="collage-item collage-item--left reveal">
+            <div class="frame-double">
+              <img src="/cocoa_branding.jpg" alt="COCOÁ Espresso Bar & Logo" class="collage-img">
+            </div>
+            <span class="caption-text">Espresso & Dessert Bar // Virar West</span>
+          </div>
+          
+          <!-- Right side: The circular booth interior -->
+          <div class="collage-item collage-item--right reveal">
+            <div class="frame-circle">
+              <img src="/cocoa_interior.jpg" alt="COCOÁ Circular Seating Booth" class="collage-img-circle">
+            </div>
+            <span class="caption-text">Our Signature Seating Booth</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Intro / About Section -->
     <section class="cocoa-section cocoa-section__intro">
       <div class="cocoa-section__inner">
-        <div class="cocoa-section__intro-left">
+        <div class="cocoa-section__intro-left reveal">
           <h3>Wait.<span>A Dessert Cafe?</span></h3>
           <p>
             When we set out to open in Virar, it was decided over a warm cup of chocolate that we would combine Parisian pâtisserie refinement with retro American dessert parlour indulgence. And as soon as we put 'Cocoa' and 'Dessert' together, the menu basically wrote itself. There is a strong connective line between fine French pastry and comforting diner desserts: pure joy. It was easy to see how happily an elegant Belgian chocolate soufflé would share menu space with warm fudge brownies and vanilla ice cream, or how natural it seemed to have a choice between a classic hot chocolate and an over-the-top loaded milkshake. It all comes together in a beautifully lit, cozy room in Virar West. Our main goal is simple: we just want you to have a nice time.
           </p>
         </div>
-        <div class="cocoa-section__intro-right cocoa-callout">
+        <div class="cocoa-section__intro-right cocoa-callout reveal">
           <ul>
             <li>
               <h4>heures<span class="cocoa-header__subtitle">EVERYDAY<br />4:00 PM - 11:30 PM</span></h4>
@@ -53,115 +77,111 @@
       </div>
     </section>
 
-    <!-- Stylized Hero Image Placeholder -->
-    <section class="cocoa-section cocoa-section__hero-placeholder">
-      <div class="cocoa-section__inner">
-        <div class="cocoa-placeholder-box hero-box">
-          <span class="placeholder-icon">📸</span>
-          <span class="placeholder-title">[Image: Cozy Interior of Cocoa Dessert Cafe, Virar]</span>
-          <span class="placeholder-desc">Warm candlelight, dark wood tables, and a vintage dessert display cabinet.</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Menu Section (Split Menu columns like Le Swan) -->
+    <!-- Menu Section (Split Menu columns like Le Swan, containing real cake categories) -->
     <section id="menu" class="cocoa-section cocoa-section__menu">
       <div class="cocoa-section__inner">
-        <h5 class="section-heading-serif">Menu</h5>
+        <h5 class="section-heading-serif reveal">Menu</h5>
         
-        <div class="cocoa-menu__dinner cocoa-menu">
+        <div class="cocoa-menu__dinner cocoa-menu reveal">
           <div class="cocoa-menu__headers">
-            <h6>Sweet Classics</h6>
-            <h6>Cocoa Specials</h6>
+            <h6>Classic & Delight</h6>
+            <h6>Cheese & Exquisite</h6>
           </div>
           
           <div class="cocoa-menu__list-container">
-            <!-- Left: Sweet Classics -->
+            <!-- Left: Classic & Delight Cakes -->
             <ul class="cocoa-menu__list">
               <li>
                 <div class="menu-item-header">
-                  <span class="menu-item-name">Belgian Chocolate Soufflé</span>
-                  <span class="menu-item-price">₹280</span>
+                  <span class="menu-item-name">Black Forest Cake</span>
+                  <span class="menu-item-price">₹350 <span class="weight-note">/ half kg</span></span>
                 </div>
-                <p class="menu-item-desc">Baked to order, molten center, served with house-made vanilla bean gelato.</p>
+                <p class="menu-item-desc">Layers of rich chocolate sponge, fresh whipped cream, and sour dark cherries.</p>
               </li>
               <li>
                 <div class="menu-item-header">
-                  <span class="menu-item-name">Classic French Crêpe</span>
-                  <span class="menu-item-price">₹220</span>
+                  <span class="menu-item-name">Pineapple Delight</span>
+                  <span class="menu-item-price">₹350 <span class="weight-note">/ half kg</span></span>
                 </div>
-                <p class="menu-item-desc">Folded crêpe with fresh strawberries, powdered sugar, and dark chocolate drizzle.</p>
+                <p class="menu-item-desc">Moist vanilla sponge layered with crushed juicy pineapples and whipped cream.</p>
               </li>
               <li>
                 <div class="menu-item-header">
-                  <span class="menu-item-name">New York Cheesecake</span>
-                  <span class="menu-item-price">₹260</span>
+                  <span class="menu-item-name">Blueberry Cake</span>
+                  <span class="menu-item-price">₹400 <span class="weight-note">/ half kg</span></span>
                 </div>
-                <p class="menu-item-desc">Rich and creamy, graham cracker crust, topped with dark berry compote.</p>
+                <p class="menu-item-desc">Sweet and tangy blueberry compote layered between light vanilla sponge layers.</p>
               </li>
               <li>
                 <div class="menu-item-header">
-                  <span class="menu-item-name">Apple Tarte Tatin</span>
-                  <span class="menu-item-price">₹240</span>
+                  <span class="menu-item-name">Fresh Mango (Seasonal)</span>
+                  <span class="menu-item-price">₹650 <span class="weight-note">/ half kg</span></span>
                 </div>
-                <p class="menu-item-desc">Upside-down caramelized apple tart, served warm with salted caramel sauce.</p>
+                <p class="menu-item-desc">Freshly sliced premium mangoes layered with rich custard cream and vanilla cake.</p>
               </li>
             </ul>
 
-            <!-- Right: Cocoa Specials -->
+            <!-- Right: Cheese & Exquisite Cakes -->
             <ul class="cocoa-menu__list">
               <li>
                 <div class="menu-item-header">
-                  <span class="menu-item-name">Old-School Fudge Brownie</span>
-                  <span class="menu-item-price">₹190</span>
+                  <span class="menu-item-name">Red Velvet Cheese Cream</span>
+                  <span class="menu-item-price">₹700 <span class="weight-note">/ half kg</span></span>
                 </div>
-                <p class="menu-item-desc">Decadent walnut brownie, served warm with rich hot fudge and vanilla ice cream.</p>
+                <p class="menu-item-desc">Crimson velvet sponge layered with a decadent, smooth cream cheese frosting.</p>
               </li>
               <li>
                 <div class="menu-item-header">
-                  <span class="menu-item-name">The Cocoa Waffle Pile</span>
-                  <span class="menu-item-price">₹250</span>
+                  <span class="menu-item-name">Chocolate Cheese Cream</span>
+                  <span class="menu-item-price">₹800 <span class="weight-note">/ half kg</span></span>
                 </div>
-                <p class="menu-item-desc">Crispy buttermilk waffles stacked with chocolate shavings, whipped cream, and hot fudge.</p>
+                <p class="menu-item-desc">A rich chocolate-infused baked cheesecake topped with thick chocolate glaze.</p>
               </li>
               <li>
                 <div class="menu-item-header">
-                  <span class="menu-item-name">Dark Chocolate Mousse</span>
-                  <span class="menu-item-price">₹210</span>
+                  <span class="menu-item-name">Ferrero Rocher Cake</span>
+                  <span class="menu-item-price">₹650 <span class="weight-note">/ half kg</span></span>
                 </div>
-                <p class="menu-item-desc">Light and airy 70% dark Belgian chocolate mousse, finished with sea salt flakes.</p>
+                <p class="menu-item-desc">Hazelnut chocolate sponge layered with Nutella buttercream and crushed Ferrero Rocher.</p>
               </li>
               <li>
                 <div class="menu-item-header">
-                  <span class="menu-item-name">Tiramisu Cup</span>
-                  <span class="menu-item-price">₹240</span>
+                  <span class="menu-item-name">Premium Nutella Cake</span>
+                  <span class="menu-item-price">₹700 <span class="weight-note">/ half kg</span></span>
                 </div>
-                <p class="menu-item-desc">Espresso-soaked ladyfingers layered with mascarpone cream and cocoa dust.</p>
+                <p class="menu-item-desc">Dense chocolate cake completely loaded with rich, smooth hazelnut Nutella spread.</p>
               </li>
             </ul>
           </div>
         </div>
 
         <!-- Dessert / Shareable Section (Like Le Swan's Fondue/Dessert layout) -->
-        <div class="cocoa-menu__extra-row">
+        <div class="cocoa-menu__extra-row reveal">
           <div class="cocoa-menu__dessert cocoa-menu">
             <div class="cocoa-menu__headers">
-              <h6>To Share</h6>
+              <h6>Premium Selection</h6>
             </div>
             <ul class="cocoa-menu__list single-column">
               <li>
                 <div class="menu-item-header">
-                  <span class="menu-item-name">Signature Chocolate Fondue (For Two)</span>
-                  <span class="menu-item-price">₹480</span>
+                  <span class="menu-item-name">Chocolate Mud Cake</span>
+                  <span class="menu-item-price">₹400 <span class="weight-note">/ half kg</span></span>
                 </div>
-                <p class="menu-item-desc">Warm pot of melted milk or dark Belgian chocolate, served with fresh seasonal fruits, marshmallows, and waffle bites.</p>
+                <p class="menu-item-desc">Rich, dense, and heavily fudgy chocolate cake layered with dark chocolate ganache.</p>
+              </li>
+              <li>
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Dutch Truffle Cake</span>
+                  <span class="menu-item-price">₹450 <span class="weight-note">/ half kg</span></span>
+                </div>
+                <p class="menu-item-desc">A classic favorite. Meticulously rich chocolate ganache coating a moist chocolate sponge.</p>
               </li>
             </ul>
           </div>
           
           <div class="cocoa-menu__fondue cocoa-callout cocoa-menu">
-            <h3>Fresh Waffles!<span class="open-sans">Every Evening</span></h3>
-            <p>Made fresh to order. Crispy on the outside, soft on the inside. Ask your server for today's special toppings.</p>
+            <h3>Custom Cakes!<span class="open-sans">Pre-order</span></h3>
+            <p>Looking for a custom cake design for birthdays, anniversaries, or special celebrations in Virar? Speak with us 24 hours in advance to craft your perfect dessert.</p>
           </div>
         </div>
       </div>
@@ -170,9 +190,9 @@
     <!-- Beverages Section (Replaces Wine section but keeps the same 2x2 grid layout) -->
     <section id="beverages" class="cocoa-section cocoa-section__beverages">
       <div class="cocoa-section__inner">
-        <h5 class="section-heading-serif">Beverages</h5>
+        <h5 class="section-heading-serif reveal">Beverages</h5>
         
-        <div class="cocoa-menu--two-column">
+        <div class="cocoa-menu--two-column reveal">
           <!-- Hot Classics -->
           <div class="cocoa-menu__category">
             <div class="cocoa-menu__headers">
@@ -220,7 +240,7 @@
           </div>
         </div>
 
-        <div class="cocoa-menu--two-column">
+        <div class="cocoa-menu--two-column reveal">
           <!-- Thick Shakes -->
           <div class="cocoa-menu__category">
             <div class="cocoa-menu__headers">
@@ -268,8 +288,8 @@
           </div>
         </div>
 
-        <!-- Split row: Bubbles & Waffle Illustration Placeholder -->
-        <div class="cocoa-menu--two-column-odd">
+        <!-- Split row: Bubbles & Tea -->
+        <div class="cocoa-menu--two-column-odd reveal">
           <div class="cocoa-menu__category">
             <div class="cocoa-menu__headers">
               <h6>Artisan Teas</h6>
@@ -285,11 +305,10 @@
             </ul>
           </div>
           
-          <!-- Styled Image Placeholder -->
-          <div class="cocoa-placeholder-box inline-box">
-            <span class="placeholder-icon">🥐</span>
-            <span class="placeholder-title">[Image: Assorted Chocolates & Pastries]</span>
-            <span class="placeholder-desc">Close-up of hand-rolled truffles and fresh macarons arranged on a plate.</span>
+          <!-- Styled border-frame box indicating the full menu copy is downloadable/viewable -->
+          <div class="cocoa-menu-meta-box">
+            <h4>Menu Note</h4>
+            <p>Prices listed are for offline/takeaway orders in Virar. Custom weights (1kg and above) are available for all flavors.</p>
           </div>
         </div>
       </div>

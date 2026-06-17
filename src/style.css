@@ -232,7 +232,7 @@ body {
   position: relative;
   background-image: url('/cocoa_hero_bg.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: 75% center;
   color: #FAF7F2;
   padding: 10rem 0 14rem 0;
 }

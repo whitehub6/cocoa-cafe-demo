@@ -234,13 +234,13 @@ body {
   background-size: cover;
   background-position: center;
   color: #FAF7F2;
-  padding: 10rem 0;
+  padding: 10rem 0 14rem 0;
 }
 
 .cocoa-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(28, 22, 19, 0.95) 45%, rgba(28, 22, 19, 0.75) 100%);
+  background: linear-gradient(to right, rgba(18, 13, 11, 0.98) 0%, rgba(18, 13, 11, 0.82) 42%, rgba(18, 13, 11, 0.15) 100%);
   z-index: 1;
 }
 
@@ -248,7 +248,7 @@ body {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 4rem;
   align-items: center;
 }
@@ -287,30 +287,68 @@ body {
   color: #D3C9C4;
 }
 
-/* Callout on background */
-.cocoa-section__intro.has-bg .cocoa-callout {
-  background-color: rgba(18, 13, 11, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-color: rgba(250, 247, 242, 0.15);
-  color: #FAF7F2;
+.cocoa-section__intro-right-spacer {
+  display: block;
+  min-height: 100px;
 }
 
-.cocoa-section__intro.has-bg .cocoa-callout::before {
-  border-color: rgba(250, 247, 242, 0.08);
+/* Horizontal Info Bar at the bottom of Hero */
+.cocoa-hero-infobar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(18, 13, 11, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(250, 247, 242, 0.12);
+  padding: 1.75rem 2rem;
 }
 
-.cocoa-section__intro.has-bg .cocoa-callout h4 {
+.infobar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+}
+
+.infobar-label {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   color: var(--color-accent);
-  border-bottom-color: rgba(250, 247, 242, 0.15);
+  font-weight: 600;
 }
 
-.cocoa-section__intro.has-bg .cocoa-callout .cocoa-header__subtitle {
+.infobar-value {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   color: #FAF7F2;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
-.cocoa-section__intro.has-bg .cocoa-callout a {
+.infobar-value a {
   color: #FAF7F2;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: var(--transition-smooth);
+}
+
+.infobar-value a:hover {
+  color: var(--color-accent);
+}
+
+.infobar-divider {
+  width: 1px;
+  height: 30px;
+  background-color: rgba(250, 247, 242, 0.15);
 }
 
 /* Diner Callout boxes / Sidebar details (Default Light Theme) */
@@ -1308,11 +1346,17 @@ input:focus, select:focus, textarea:focus {
 /* Responsive Styles */
 @media (max-width: 991px) {
   .cocoa-section__intro.has-bg {
-    padding: 8rem 0;
+    padding: 8rem 0 12rem 0;
   }
   .cocoa-section__intro.has-bg .cocoa-section__inner {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  .cocoa-section__intro-right-spacer {
+    display: none;
+  }
+  .cocoa-hero-infobar {
+    padding: 1.5rem 1.5rem;
   }
   .featured-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1327,6 +1371,21 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media (max-width: 768px) {
+  .cocoa-section__intro.has-bg {
+    padding: 6rem 0 0 0;
+  }
+  .cocoa-hero-infobar {
+    position: relative;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.25rem 1.5rem;
+    background: rgba(18, 13, 11, 0.85);
+    margin-top: 3.5rem;
+    border-top: 1px solid rgba(250, 247, 242, 0.15);
+  }
+  .infobar-divider {
+    display: none;
+  }
   .cocoa-header__inner {
     flex-direction: column;
     gap: 1.5rem;

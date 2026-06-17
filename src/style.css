@@ -13,6 +13,8 @@
   
   /* Layout */
   --transition-smooth: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-subtle: 0 4px 15px rgba(28, 22, 19, 0.03);
+  --shadow-medium: 0 10px 30px rgba(28, 22, 19, 0.08);
 }
 
 /* Reset & Bases */
@@ -78,12 +80,13 @@ body {
 
 .cocoa-logo {
   font-family: var(--font-serif);
-  font-size: 2.25rem;
+  font-size: 2.75rem;
   font-weight: 700;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
   text-decoration: none;
   color: var(--color-text-primary);
   line-height: 1;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
 }
 
 .cocoa-logo__subtitle {
@@ -144,13 +147,13 @@ body {
   background-size: cover;
   background-position: center;
   color: #FAF7F2;
-  padding: 8rem 0;
+  padding: 10rem 0;
 }
 
 .cocoa-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(28, 22, 19, 0.95) 40%, rgba(28, 22, 19, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(28, 22, 19, 0.95) 45%, rgba(28, 22, 19, 0.75) 100%);
   z-index: 1;
 }
 
@@ -163,9 +166,21 @@ body {
   align-items: center;
 }
 
+.hero-brand-highlight {
+  font-family: var(--font-serif);
+  font-size: 6rem;
+  letter-spacing: 12px;
+  font-weight: 700;
+  color: #FAF7F2;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(250, 247, 242, 0.15);
+  padding-bottom: 1rem;
+  width: fit-content;
+}
+
 .cocoa-section__intro-left h3 {
   font-family: var(--font-serif);
-  font-size: 3.25rem;
+  font-size: 2.75rem;
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -187,7 +202,7 @@ body {
 
 /* Callout on background */
 .cocoa-section__intro.has-bg .cocoa-callout {
-  background-color: rgba(18, 13, 11, 0.65);
+  background-color: rgba(18, 13, 11, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-color: rgba(250, 247, 242, 0.15);
@@ -270,44 +285,42 @@ body {
   color: var(--color-accent);
 }
 
-/* Circular Seating Vibe Section */
-.vibe-grid {
+/* Signatures / Featured Grid Section */
+.cocoa-section__featured {
+  background-color: var(--color-bg);
+}
+
+.featured-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 5rem;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 1rem;
 }
 
-.vibe-text-column h3 {
-  font-family: var(--font-serif);
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-}
-
-.vibe-text-column p {
-  font-size: 1.05rem;
-  color: var(--color-text-secondary);
-  line-height: 1.8;
-}
-
-/* Circular frame for the interior seating booth */
-.frame-circle {
-  border: 12px solid var(--color-border);
-  border-radius: 50%;
-  overflow: hidden;
-  width: 100%;
-  max-width: 340px;
-  aspect-ratio: 1 / 1;
-  box-shadow: 0 15px 40px rgba(28, 22, 19, 0.08);
+.featured-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-subtle);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-border);
-  margin: 0 auto;
+  flex-direction: column;
+  overflow: hidden;
+  transition: var(--transition-smooth);
 }
 
-.collage-img-circle {
+.featured-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-accent);
+}
+
+.featured-card__image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.featured-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -315,8 +328,37 @@ body {
   transition: var(--transition-smooth);
 }
 
-.frame-circle:hover .collage-img-circle {
-  transform: scale(1.05);
+.featured-card:hover .featured-img {
+  transform: scale(1.03);
+}
+
+.featured-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+.featured-card__content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+}
+
+.featured-card__content p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.featured-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  margin-top: auto;
 }
 
 /* Menu Layout */
@@ -407,7 +449,7 @@ body {
 /* Shareable Waffles / Fondue Extra Row */
 .cocoa-menu__extra-row {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1.2fr 1.2fr;
   gap: 4rem;
   align-items: start;
   margin-top: 5rem;
@@ -424,30 +466,51 @@ body {
   border: none;
 }
 
-.cocoa-menu__extra-row .cocoa-callout h3 {
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 0.5rem;
+/* Custom Cake Callout Card Styling */
+.cocoa-menu__fondue.has-image-badge {
+  padding: 1.5rem;
+}
+
+.custom-cake-card {
   display: flex;
-  justify-content: space-between;
+  gap: 1.5rem;
   align-items: center;
 }
 
-.cocoa-menu__extra-row .cocoa-callout h3 span {
+.custom-cake-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--color-border);
+  box-shadow: var(--shadow-subtle);
+  flex-shrink: 0;
+}
+
+.custom-cake-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.custom-cake-content h3 span {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--color-accent);
 }
 
-.cocoa-menu__extra-row .cocoa-callout p {
-  font-size: 0.9rem;
+.custom-cake-content p {
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* Beverages Section (Le Swan Wine Grids) */
@@ -469,9 +532,35 @@ body {
 
 .cocoa-menu--two-column-odd {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 4rem;
   align-items: center;
+}
+
+/* Diner Savories Card Layout */
+.savory-card {
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  background-color: rgba(28, 22, 19, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-subtle);
+  margin-top: 1rem;
+}
+
+.savory-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  display: block;
+}
+
+.savory-card-content p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
 /* Minimalist border box representing the menu meta information */
@@ -568,19 +657,18 @@ body {
 /* Responsive Styles */
 @media (max-width: 991px) {
   .cocoa-section__intro.has-bg {
-    padding: 6rem 0;
+    padding: 8rem 0;
   }
   .cocoa-section__intro.has-bg .cocoa-section__inner {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .vibe-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
-  .frame-circle {
-    max-width: 280px;
+  .hero-brand-highlight {
+    font-size: 4.5rem;
   }
 }
 
@@ -597,6 +685,20 @@ body {
   
   .section-heading-serif {
     font-size: 2.75rem;
+  }
+
+  .cocoa-logo {
+    font-size: 2.25rem;
+  }
+
+  .hero-brand-highlight {
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .cocoa-menu__headers {
@@ -627,10 +729,20 @@ body {
     gap: 3rem;
   }
 
+  .custom-cake-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .cocoa-menu--two-column,
   .cocoa-menu--two-column-odd {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  .savory-card {
+    max-width: 450px;
+    margin: 1rem auto 0;
   }
 
   .cocoa-footer__inner {

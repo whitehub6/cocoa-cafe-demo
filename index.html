@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cocoa Dessert Cafe | Virar West</title>
+    <title>COCOÁ | Dessert Cafe & Pâtisserie, Virar</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,12 @@
     <header class="cocoa-header">
       <div class="cocoa-header__inner">
         <div class="cocoa-header__logo-container">
-          <a href="/" class="cocoa-logo">COCOA</a>
+          <a href="/" class="cocoa-logo">COCOÁ</a>
           <span class="cocoa-logo__subtitle">Dessert Cafe &middot; Virar</span>
         </div>
         <nav class="cocoa-nav">
           <ul class="cocoa-nav__list">
+            <li><a href="#featured">Signatures</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#beverages">Beverages</a></li>
             <li><a href="#contact">Hours & Contact</a></li>
@@ -28,11 +29,12 @@
       </div>
     </header>
 
-    <!-- Intro / About Section (with the new background image of the text) -->
+    <!-- Intro / About Section (Hero Banner with Background Text) -->
     <section class="cocoa-section cocoa-section__intro has-bg">
       <div class="cocoa-hero-overlay"></div>
       <div class="cocoa-section__inner">
         <div class="cocoa-section__intro-left reveal">
+          <h1 class="hero-brand-highlight">COCOÁ</h1>
           <h3>Wait.<span>A Dessert Cafe?</span></h3>
           <p>
             When we set out to open in Virar, it was decided over a warm cup of chocolate that we would combine Parisian pâtisserie refinement with retro American dessert parlour indulgence. And as soon as we put 'Cocoa' and 'Dessert' together, the menu basically wrote itself. There is a strong connective line between fine French pastry and comforting diner desserts: pure joy. It was easy to see how happily an elegant Belgian chocolate soufflé would share menu space with warm fudge brownies and vanilla ice cream, or how natural it seemed to have a choice between a classic hot chocolate and an over-the-top loaded milkshake. It all comes together in a beautifully lit, cozy room in Virar West. Our main goal is simple: we just want you to have a nice time.
@@ -54,17 +56,47 @@
       </div>
     </section>
 
-    <!-- Circular Seating Vibe Section -->
-    <section class="cocoa-section cocoa-section__vibe">
-      <div class="cocoa-section__inner vibe-grid">
-        <div class="vibe-image-column reveal">
-          <div class="frame-circle">
-            <img src="/cocoa_interior.jpg" alt="COCOÁ Circular Seating Booth" class="collage-img-circle">
+    <!-- Signature Creations Grid (New attractive section replacing the old seating column) -->
+    <section id="featured" class="cocoa-section cocoa-section__featured">
+      <div class="cocoa-section__inner">
+        <h5 class="section-heading-serif reveal">Signatures</h5>
+        
+        <div class="featured-grid">
+          <!-- Item 1: Matilda Cake -->
+          <div class="featured-card reveal">
+            <div class="featured-card__image-wrapper">
+              <img src="/matilda_cake.png" alt="The Matilda Cake" class="featured-img">
+            </div>
+            <div class="featured-card__content">
+              <h3>The Matilda Cake</h3>
+              <p>Our ultra-decadent chocolate pull-up cake layered in a glass jar. A chocolate lover's dream.</p>
+              <span class="featured-price">₹280</span>
+            </div>
           </div>
-        </div>
-        <div class="vibe-text-column reveal">
-          <h3>Designed for comfort.</h3>
-          <p>Our signature circular seating booth is the perfect spot to unwind, share a chocolate fondue, and watch the world go by in Virar West.</p>
+
+          <!-- Item 2: Biscoff Cheesecake -->
+          <div class="featured-card reveal">
+            <div class="featured-card__image-wrapper">
+              <img src="/biscoff_cheesecake.jpg" alt="Lotus Biscoff Cheesecake" class="featured-img">
+            </div>
+            <div class="featured-card__content">
+              <h3>Lotus Biscoff Cheesecake</h3>
+              <p>Creamy, smooth baked cheesecake loaded with original Biscoff spread and crushed cookies.</p>
+              <span class="featured-price">₹260</span>
+            </div>
+          </div>
+
+          <!-- Item 3: Chocolate Flake Dessert -->
+          <div class="featured-card reveal">
+            <div class="featured-card__image-wrapper">
+              <img src="/chocolate_dessert.png" alt="Chocolate Flake Cake" class="featured-img">
+            </div>
+            <div class="featured-card__content">
+              <h3>Chocolate Flake Cake</h3>
+              <p>Moist chocolate sponge layered with ganache, topped with delicate chocolate flakes and fresh whipped cream.</p>
+              <span class="featured-price">₹240</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -171,9 +203,14 @@
             </ul>
           </div>
           
-          <div class="cocoa-menu__fondue cocoa-callout cocoa-menu">
-            <h3>Custom Cakes!<span class="open-sans">Pre-order</span></h3>
-            <p>Looking for a custom cake design for birthdays, anniversaries, or special celebrations in Virar? Speak with us 24 hours in advance to craft your perfect dessert.</p>
+          <div class="cocoa-menu__fondue cocoa-callout cocoa-menu has-image-badge">
+            <div class="custom-cake-card">
+              <img src="/mickey_cake.png" alt="Custom Celebration Cake" class="custom-cake-img">
+              <div class="custom-cake-content">
+                <h3>Custom Cakes!<span class="open-sans">Pre-order</span></h3>
+                <p>Looking for a custom cake design for birthdays or anniversaries in Virar? Speak with us 24 hours in advance to craft your perfect dessert.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -282,19 +319,17 @@
 
         <!-- Split row: Bubbles & Tea -->
         <div class="cocoa-menu--two-column-odd reveal">
+          <!-- Left side: Diner Savories (Avocado toast, salad) -->
           <div class="cocoa-menu__category">
             <div class="cocoa-menu__headers">
-              <h6>Artisan Teas</h6>
+              <h6>Diner Savories</h6>
             </div>
-            <ul class="cocoa-menu__list">
-              <li>
-                <div class="menu-item-header">
-                  <span class="menu-item-name">Chamomile Mint Tea</span>
-                  <span class="menu-item-price">₹120</span>
-                </div>
-                <p class="menu-item-desc">Soothing chamomile blossoms infused with fresh garden mint leaves.</p>
-              </li>
-            </ul>
+            <div class="savory-card">
+              <img src="/savory_dishes.jpg" alt="Savory Dishes - Avocado Toast & Salad" class="savory-card-img">
+              <div class="savory-card-content">
+                <p>We believe in balance. Alongside our sweet creations, we serve fresh, hearty diner classics like loaded Avocado Toast and custom garden salad bowls.</p>
+              </div>
+            </div>
           </div>
           
           <!-- Styled border-frame box indicating the full menu copy is downloadable/viewable -->
@@ -306,11 +341,11 @@
       </div>
     </section>
 
-    <!-- Footer / Location & Booking Info (Replaces People section with clean contact info) -->
+    <!-- Footer / Location & Booking Info -->
     <footer id="contact" class="cocoa-footer">
       <div class="cocoa-footer__inner">
         <div class="footer-col brand-info">
-          <h2>COCOA</h2>
+          <h2>COCOÁ</h2>
           <p>A bistro-diner hybrid dessert experience in Virar West.</p>
         </div>
         <div class="footer-col location-info">
@@ -323,7 +358,7 @@
         </div>
       </div>
       <div class="footer-disclaimer">
-        <p>&copy; 2026 Cocoa Dessert Cafe. Inspired by Le Swan design framework.</p>
+        <p>&copy; 2026 COCOÁ. Inspired by Le Swan design framework.</p>
       </div>
     </footer>
 

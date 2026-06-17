@@ -115,96 +115,6 @@ body {
   color: var(--color-accent);
 }
 
-/* Custom Hero Collage Section */
-.cocoa-hero-collage {
-  padding: 4rem 0 2rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.cocoa-hero-collage__inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.collage-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.collage-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Double-lined frame for the branding image */
-.frame-double {
-  border: 1px solid var(--color-border);
-  padding: 10px;
-  background-color: var(--color-bg);
-  position: relative;
-  width: 100%;
-  box-shadow: 0 10px 30px rgba(28, 22, 19, 0.05);
-}
-
-.frame-double::before {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  right: 3px;
-  bottom: 3px;
-  border: 1px solid var(--color-border);
-  pointer-events: none;
-}
-
-/* Circular frame for the interior seating booth */
-.frame-circle {
-  border: 12px solid var(--color-border);
-  border-radius: 50%;
-  overflow: hidden;
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 1 / 1;
-  box-shadow: 0 15px 40px rgba(28, 22, 19, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-border);
-}
-
-.collage-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-.collage-img-circle {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: var(--transition-smooth);
-}
-
-.frame-circle:hover .collage-img-circle {
-  transform: scale(1.05);
-}
-
-.caption-text {
-  display: block;
-  margin-top: 1rem;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-  letter-spacing: 1px;
-}
-
 /* Common Section Layout */
 .cocoa-section {
   padding: 5rem 0;
@@ -227,12 +137,26 @@ body {
   letter-spacing: 4px;
 }
 
-/* Intro Section */
-.cocoa-section__intro {
-  padding: 6rem 0;
+/* Intro Section (converted to background image hero) */
+.cocoa-section__intro.has-bg {
+  position: relative;
+  background-image: url('/cocoa_hero_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #FAF7F2;
+  padding: 8rem 0;
 }
 
-.cocoa-section__intro .cocoa-section__inner {
+.cocoa-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(28, 22, 19, 0.95) 40%, rgba(28, 22, 19, 0.8) 100%);
+  z-index: 1;
+}
+
+.cocoa-section__intro.has-bg .cocoa-section__inner {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1.4fr 0.8fr;
   gap: 4rem;
@@ -241,7 +165,7 @@ body {
 
 .cocoa-section__intro-left h3 {
   font-family: var(--font-serif);
-  font-size: 2.75rem;
+  font-size: 3.25rem;
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -256,12 +180,38 @@ body {
 }
 
 .cocoa-section__intro-left p {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--color-text-secondary);
+  color: #D3C9C4;
 }
 
-/* Diner Callout boxes / Sidebar details (Like Le Swan info column) */
+/* Callout on background */
+.cocoa-section__intro.has-bg .cocoa-callout {
+  background-color: rgba(18, 13, 11, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: rgba(250, 247, 242, 0.15);
+  color: #FAF7F2;
+}
+
+.cocoa-section__intro.has-bg .cocoa-callout::before {
+  border-color: rgba(250, 247, 242, 0.08);
+}
+
+.cocoa-section__intro.has-bg .cocoa-callout h4 {
+  color: var(--color-accent);
+  border-bottom-color: rgba(250, 247, 242, 0.15);
+}
+
+.cocoa-section__intro.has-bg .cocoa-callout .cocoa-header__subtitle {
+  color: #FAF7F2;
+}
+
+.cocoa-section__intro.has-bg .cocoa-callout a {
+  color: #FAF7F2;
+}
+
+/* Diner Callout boxes / Sidebar details (Default Light Theme) */
 .cocoa-callout {
   border: 1px solid var(--color-border);
   padding: 2rem;
@@ -320,12 +270,61 @@ body {
   color: var(--color-accent);
 }
 
+/* Circular Seating Vibe Section */
+.vibe-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.vibe-text-column h3 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.vibe-text-column p {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* Circular frame for the interior seating booth */
+.frame-circle {
+  border: 12px solid var(--color-border);
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 15px 40px rgba(28, 22, 19, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-border);
+  margin: 0 auto;
+}
+
+.collage-img-circle {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+.frame-circle:hover .collage-img-circle {
+  transform: scale(1.05);
+}
+
 /* Menu Layout */
 .cocoa-menu {
   margin-bottom: 3.5rem;
 }
 
-/* Split header for columns: Sweet Classics | Cocoa Specials */
+/* Split header for columns */
 .cocoa-menu__headers {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -568,16 +567,20 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 991px) {
-  .collage-grid {
+  .cocoa-section__intro.has-bg {
+    padding: 6rem 0;
+  }
+  .cocoa-section__intro.has-bg .cocoa-section__inner {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .collage-item--right .frame-circle {
+  .vibe-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  .frame-circle {
     max-width: 280px;
-  }
-  .cocoa-section__intro .cocoa-section__inner {
-    grid-template-columns: 1fr;
-    gap: 3rem;
   }
 }
 
